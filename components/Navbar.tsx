@@ -46,19 +46,20 @@ const NavLink = (props: Props) => {
   );
 };
 
-// const Logo = (props: any) => {
-//   return (
-//     <Image
-//       src="/public/logo1.jpg"
-//       width={500}
-//       height={500}
-//       alt="Picture of the author"
-//     />
-//   )
-// }
+const Logo = (props: any) => {
+  return (
+    <Image
+      src='/logo3.png'
+      width={'2rem'}
+      height={'3rem'}
+      alt='Cain & Sons company logo fire extinguisher'
+    />
+  )
+}
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  console.log('Is Dropdown open:', isOpen);
 
   return (
     <>
@@ -72,12 +73,13 @@ export default function Navbar() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={'center'}>
-            <Image
-              src={'/logo1.jpg'}
+            {/* <Image
+              src={'/logo3.png'}
               h={'3rem'}
-              w={'3rem'}
+              w={'2rem'}
               alt='logo'
-            />
+            /> */}
+            <Logo />
             {/* <Box>Logo</Box> */}
             <HStack
               as={'nav'}
