@@ -1,14 +1,7 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+'use client'
 import { ChakraProvider } from '@chakra-ui/react';
 import Navbar from '@/components/Navbar';
 
-const inter = Inter({ subsets: ['latin'] });
-
-export const metadata: Metadata = {
-  title: 'Cain & Sons',
-  description: 'Fire Extinguisher Services',
-};
 
 export default function RootLayout({
   children,
@@ -17,10 +10,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
+      <head />
+      <body>
       <ChakraProvider>
         <Navbar />
         {children}
       </ChakraProvider>
+      </body>
     </html>
   );
 }
