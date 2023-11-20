@@ -46,8 +46,8 @@ const CellIcon = (props: any) => {
   return (
     <Icon
       as={IoIosPhonePortrait}
-      width={'2rem'}
-      height={'3rem'}
+      width={'2.5rem'}
+      height={'3.5rem'}
       color={'red'}
       ml={{ lg: '15rem' }}
       mr={{ lg: '4' }}
