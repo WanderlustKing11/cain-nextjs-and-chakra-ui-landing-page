@@ -10,7 +10,30 @@ import {
   CardBody,
   Heading,
   Text,
+  useBreakpointValue,
 } from '@chakra-ui/react';
+
+interface CustomCardProps {
+  title: string;
+  days: string;
+  hours: string;
+}
+
+const CustomCard: React.FC<CustomCardProps> = ({title, days, hours}) => {
+  const cardWidth = useBreakpointValue({ base: '40%', md: '33%', lg: '20em' });
+
+  return (
+    <Card alignItems={'center'} width={cardWidth}>
+      <CardHeader p={2} pt={4}>
+        <Heading size={{sm: 'sm', md: 'md'}}>{title}</Heading>
+      </CardHeader>
+      <CardBody>
+        <Text>{days}</Text>
+        <Text>{hours}</Text>
+      </CardBody>
+    </Card>
+  );
+};
 
 export default function HoursOfOperation() {
   return (
@@ -20,26 +43,26 @@ export default function HoursOfOperation() {
         justifyContent={'space-evenly'}
         alignItems={'center'}
       >
-        <Card>
-          <CardHeader>
-            <Heading size='md'> Customer dashboard</Heading>
+        {/* <Card width={'33%'}>
+          <CardHeader pb={0}>
+            <Heading size='md'>Walk-in Hours</Heading>
           </CardHeader>
           <CardBody>
-            <Text>
-              View a summary of all your customers over the last month.
-            </Text>
+            <Text>Wednesday</Text>
+            <Text>12pm - 3pm</Text>
           </CardBody>
         </Card>
-        <Card>
-          <CardHeader>
-            <Heading size='md'> Customer dashboard</Heading>
+        <Card alignItems={'center'} width={'33%'}>
+          <CardHeader pb={0}>
+            <Heading size='md'>Hours of Operation</Heading>
           </CardHeader>
           <CardBody>
-            <Text>
-              View a summary of all your customers over the last month.
-            </Text>
+            <Text>Mon - Fri</Text>
+            <Text>9am - 5pm</Text>
           </CardBody>
-        </Card>
+        </Card> */}
+        <CustomCard title='Walk-in Hours' days='Wednesday' hours='12pm - 3pm' />
+        <CustomCard title='Hours of Operation' days='Mon - Fri' hours='9am - 5pm'  />
       </Flex>
     </Box>
   );
