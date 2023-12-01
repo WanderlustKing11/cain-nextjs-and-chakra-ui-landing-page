@@ -21,9 +21,9 @@ const settings = {
   arrows: false,
   fade: true,
   infinite: true,
-  autoplay: true,
+  autoplay: false, // Adjust for publish!!!!!!
   speed: 500,
-  autoplaySpeed: 5000,
+  autoplaySpeed: 5000, 
   slidesToShow: 1,
   slidesToScroll: 1,
 }
@@ -44,25 +44,40 @@ export default function Carousel() {
     {
       title: 'Proud state family owned for over 40 years',
       text: "Your #1 fire extinguisher service",
-      image:
-        'https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+      image: '/ps-03.jpg',
+      position: { base: 'top left', sm: '10% -20%', md: '10% -50%', lg: '50% 10%' },
+      size: { base: '300%', sm: '200%', md: '150%', lg: '70%' },
+      textColor: 'gray.200',
+      textTransfrom: { sm: 'translate(0, -50%)', md: 'translate(30%, -10%)', lg: 'translate(16%, -45%)' },
+      transparentBg: { lg: 'hsla(100,0%,0%,0.3)' },
+      borderRadius: { lg: '15px' },
     },
     {
       title: 'Small business helping other small businesses',
       text: "We believe that integrety and quality don't have to be exclusive.",
-      image:
-        'https://images.unsplash.com/photo-1438183972690-6d4658e3290e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2274&q=80',
+      image: '/ps-07.jpg',
+      position: { base: '23% 0%', sm: '20% 0%', md: 'top left', lg: '50% 10%' },
+      size: { base: '260%', sm: '185%', md: '115%', lg: '70%' },
+      textColor: 'gray.200',
+      textTransfrom: { sm: 'translate(0, -50%)', md: 'translate(31%, -10%)', lg: 'translate(30%, -45%)' },
+
     },
     {
       title: 'Design Projects 3',
       text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-      image:
-        'https://images.unsplash.com/photo-1507237998874-b4d52d1dd655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+      image: '/ps-02.jpg',
+      position: { base: '60% 0%', sm: '60% 0%', md: '60% 0%', lg: '50% 10%' },
+      size: { base: '250%', sm: '190%', md: '115%', lg: '70%' },
     },
   ]
 
   return (
-    <Box position={'relative'} height={'600px'} width={'full'} overflow={'hidden'}>
+    <Box 
+      position={'relative'} 
+      height={'600px'} width={'full'} 
+      overflow={'hidden'}
+      bgGradient='linear(to-l, gray.900, gray.900, red.800)'
+    >
       {/* CSS files for react-slick */}
       <link
         rel="stylesheet"
@@ -77,7 +92,8 @@ export default function Carousel() {
       {/* Left Icon */}
       <IconButton
         aria-label="left-arrow"
-        variant="ghost"
+        variant={{md: 'ghost', lg: 'solid'}}
+        colorScheme= 'white'
         position="absolute"
         left={side}
         top={top}
@@ -89,7 +105,8 @@ export default function Carousel() {
       {/* Right Icon */}
       <IconButton
         aria-label="right-arrow"
-        variant="ghost"
+        variant={{md: 'ghost', lg: 'solid'}}
+        colorScheme='white'
         position="absolute"
         right={side}
         top={top}
@@ -105,9 +122,9 @@ export default function Carousel() {
             key={index}
             height={'6xl'}
             position="relative"
-            backgroundPosition="center"
+            backgroundPosition={card.position} // Custom in 'cards'
             backgroundRepeat="no-repeat"
-            backgroundSize="cover"
+            backgroundSize={card.size} // Adjust
             backgroundImage={`url(${card.image})`}>
             {/* This is the block you need to change, to customize the caption */}
             <Container size="container.lg" height="600px" position="relative">
@@ -117,14 +134,19 @@ export default function Carousel() {
                 maxW={'lg'}
                 position="absolute"
                 top="50%"
-                transform="translate(0, -50%)">
-                <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
+                transform={card.textTransfrom}
+                backgroundColor={card.transparentBg}
+                borderRadius={card.borderRadius}
+              >
+                <Heading fontSize={{ base: '3xl', md: '4xl', lg: '4xl' }}
                   margin={4}
-                  mr={10}
+                  mr={10}   
+                  color={card.textColor}               
                 >
                   {card.title}
                 </Heading>
-                <Text fontSize={{ base: 'md', lg: 'lg' }} color="GrayText"
+                <Text fontSize={{ base: 'md', lg: 'lg' }} 
+                  color={card.textColor}
                   margin={4}
                   mr={10}
                 >

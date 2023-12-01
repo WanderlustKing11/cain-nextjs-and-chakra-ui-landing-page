@@ -20,16 +20,30 @@ interface CustomCardProps {
 }
 
 const CustomCard: React.FC<CustomCardProps> = ({title, days, hours}) => {
-  const cardWidth = useBreakpointValue({ base: '40%', md: '33%', lg: '20em' });
+  const cardWidth = useBreakpointValue({ base: '40%', sm: '200px', md: '30%', lg: '15em' });
+  const cardHeight = useBreakpointValue({ base: '160px', sm: '175px', md: '200', lg: '15em' });
+  const cardTextColor = useColorModeValue('gray.700', 'gray.900');
 
   return (
-    <Card alignItems={'center'} width={cardWidth}>
-      <CardHeader p={2} pt={4}>
-        <Heading size={{sm: 'sm', md: 'md'}}>{title}</Heading>
+    <Card 
+      alignItems={'center'} 
+      width={cardWidth}
+      height={cardHeight}
+      mt={{ base: 4, sm: 4, md: 6, lg: 10 }}
+      mb={{ base: 4, sm: 4, md: 6, lg: 10 }}
+    >
+      <CardHeader p={2} pt={{ base: 6, sm: 6, md: 6, lg: 12 }}>
+        <Heading 
+          size={{ sm: 'md', md: 'md', lg: 'md' }}
+          fontSize={{ base: '0.79rem'}}
+          color={cardTextColor}
+        >
+          {title}
+        </Heading>
       </CardHeader>
       <CardBody>
-        <Text>{days}</Text>
-        <Text>{hours}</Text>
+        <Text fontSize={{ base: '1rem', sm: '1.3rem', md: '1.3rem', lg: '1.8rem' }} color={cardTextColor}>{days}</Text>
+        <Text fontSize={{ base: '1rem', sm: '1.3rem', md: '1.3rem', lg: '1.8rem' }} color={cardTextColor}>{hours}</Text>
       </CardBody>
     </Card>
   );
@@ -37,7 +51,10 @@ const CustomCard: React.FC<CustomCardProps> = ({title, days, hours}) => {
 
 export default function HoursOfOperation() {
   return (
-    <Box bg={useColorModeValue('red.600', 'gray.800')} p={4}>
+    <Box 
+      bg={useColorModeValue('red.700', 'gray.800')} 
+      p={4}
+    >
       <Flex
         direction={'row'}
         justifyContent={'space-evenly'}
