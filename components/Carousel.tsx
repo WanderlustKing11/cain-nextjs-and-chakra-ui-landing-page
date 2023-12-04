@@ -49,8 +49,8 @@ export default function Carousel() {
       size: { base: '300%', sm: '200%', md: '150%', lg: '70%' },
       textColor: 'gray.200',
       textTransfrom: { sm: 'translate(0, -50%)', md: 'translate(30%, -10%)', lg: 'translate(16%, -45%)' },
-      transparentBg: { lg: 'hsla(100,0%,0%,0.3)' },
-      borderRadius: { lg: '15px' },
+      transparentBg: 'hsla(100,0%,0%,0.3)',
+      borderRadius: '15px',
     },
     {
       title: 'Small business helping other small businesses',
@@ -59,7 +59,9 @@ export default function Carousel() {
       position: { base: '23% 0%', sm: '20% 0%', md: 'top left', lg: '50% 10%' },
       size: { base: '260%', sm: '185%', md: '115%', lg: '70%' },
       textColor: 'gray.200',
-      textTransfrom: { sm: 'translate(0, -50%)', md: 'translate(31%, -10%)', lg: 'translate(30%, -45%)' },
+      textTransfrom: { sm: 'translate(5%, -50%)', md: 'translate(45%, -52%)', lg: 'translate(35%, -45%)' },
+      transparentBg: { base: 'hsla(100,0%,0%,0.3)', md: 'transparent' },
+      borderRadius: {base: '15px', md: 'none' },
 
     },
     {
@@ -68,6 +70,9 @@ export default function Carousel() {
       image: '/ps-02.jpg',
       position: { base: '60% 0%', sm: '60% 0%', md: '60% 0%', lg: '50% 10%' },
       size: { base: '250%', sm: '190%', md: '115%', lg: '70%' },
+      textTransfrom: { base: 'translate(0%, -30%)', sm: 'translate(0%, -40%)' , md: 'translate(-28%, -120%)', lg: 'translate(-20%, -70%)' },
+      transparentBg: 'hsla(200,94%,67%,0.3)',
+      borderRadius: '15px',
     },
   ]
 
@@ -130,7 +135,7 @@ export default function Carousel() {
             <Container size="container.lg" height="600px" position="relative">
               <Stack
                 spacing={6}
-                w={'full'}
+                w={{ base: '75%', md: '90%', lg: '75%'}}
                 maxW={'lg'}
                 position="absolute"
                 top="50%"
@@ -139,8 +144,8 @@ export default function Carousel() {
                 borderRadius={card.borderRadius}
               >
                 <Heading fontSize={{ base: '3xl', md: '4xl', lg: '4xl' }}
-                  margin={4}
-                  mr={10}   
+                  margin={3}
+                  // mr={10}   
                   color={card.textColor}               
                 >
                   {card.title}

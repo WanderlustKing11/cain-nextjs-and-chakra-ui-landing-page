@@ -65,7 +65,7 @@ export default function Navbar() {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue('gray.200', 'gray.800')}
+        bg={useColorModeValue('gray.100', 'gray.800')}
         color={useColorModeValue('gray.600', 'white')}
         minH={'60px'}
         py={{ base: 2 }}
