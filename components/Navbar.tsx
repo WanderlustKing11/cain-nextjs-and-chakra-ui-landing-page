@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import {
   Box,
   Flex,
@@ -155,10 +156,10 @@ const DesktopNav = () => {
         <Box key={navItem.label}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
+            <Link href={navItem.href ?? '#'} passHref>
               <Box
                 as='a'
                 p={2}
-                href={navItem.href ?? '#'}
                 fontSize={'sm'}
                 fontWeight={500}
                 color={linkColor}
@@ -169,6 +170,7 @@ const DesktopNav = () => {
               >
                 {navItem.label}
               </Box>
+              </Link>
             </PopoverTrigger>
 
             {navItem.children && (
@@ -188,17 +190,17 @@ const DesktopNav = () => {
               </PopoverContent>
             )}
           </Popover>
-        </Box>
+        </Box>        
       ))}
     </Stack>
   );
 };
 
-const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+const DesktopSubNav = ({ label, href = '#', subLabel }: NavItem) => {
   return (
+    <Link href={href} passHref>
     <Box
       as='a'
-      href={href}
       role={'group'}
       display={'block'}
       p={2}
@@ -229,6 +231,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
         </Flex>
       </Stack>
     </Box>
+    </Link>
   );
 };
 
@@ -252,10 +255,10 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
 
   return (
     <Stack spacing={4} onClick={children && onToggle}>
+      <Link href={href ?? '#'} passHref>
       <Box
         py={2}
         as='a'
-        href={href ?? '#'}
         justifyContent='space-between'
         alignItems='center'
         _hover={{
@@ -278,6 +281,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           />
         )}
       </Box>
+      </Link>
 
       <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
         <Stack
@@ -310,21 +314,23 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Services',
+    href: '/pages/services',
     children: [
       {
         label: 'Fire Extinguishers',
         subLabel: 'Service and maintenance',
-        href: '#',
+        href: '/pages/services',
       },
       {
         label: 'Kitchen Systems',
         subLabel: 'Keep up to code and regulations',
-        href: '#',
+        href: '/pages/services',
       },
     ],
   },
   {
     label: 'About',
+    href: '/pages/about',
     // children: [
     //   {
     //     label: 'Job Board',
@@ -340,10 +346,10 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: 'Blog',
-    href: '#',
+    href: '/pages/blog',
   },
   {
     label: 'Contact',
-    href: '#',
+    href: '/pages/blog',
   },
 ];
