@@ -94,7 +94,9 @@ export default function Navbar() {
           flex={{ base: 1 }}
           justify={{ base: 'center', md: 'start', lg: 'space-between' }}
         >
-          <Logo />
+          <Link href='/' passHref>
+            <Logo />
+          </Link>
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
           </Flex>
@@ -112,7 +114,7 @@ export default function Navbar() {
             </MenuButton>
             <MenuList>
               <MenuItem
-                onClick={() => window.location.href = 'tel:973-227-2277'}
+                onClick={() => (window.location.href = 'tel:973-227-2277')}
               >
                 <Stack
                   direction='row'
@@ -121,7 +123,9 @@ export default function Navbar() {
                   spacing={4}
                 >
                   <PhoneIcon marginLeft={4} />
-                  <Text><strong>(973) 227-2277</strong></Text>
+                  <Text>
+                    <strong>(973) 227-2277</strong>
+                  </Text>
                 </Stack>
               </MenuItem>
             </MenuList>
@@ -301,43 +305,39 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
+    label: 'Home',
+    href: '/',
+  },
+  {
     label: 'Services',
-    href: '/pages/services',
     children: [
+      {
+        label: 'Service Page',
+        subLabel: 'Our services',
+        href: '/services',
+      },
       {
         label: 'Fire Extinguishers',
         subLabel: 'Service and maintenance',
-        href: '/pages/services',
+        href: '/services',
       },
       {
         label: 'Kitchen Systems',
         subLabel: 'Keep up to code and regulations',
-        href: '/pages/services',
+        href: '/services',
       },
     ],
   },
   {
     label: 'About',
-    href: '/pages/about',
-    // children: [
-    //   {
-    //     label: 'Job Board',
-    //     subLabel: 'Find your dream design job',
-    //     href: '#',
-    //   },
-    //   {
-    //     label: 'Freelance Projects',
-    //     subLabel: 'An exclusive list for contract work',
-    //     href: '#',
-    //   },
-    // ],
+    href: '/about',
   },
   {
     label: 'Blog',
-    href: '/pages/blog',
+    href: '/blog',
   },
   {
     label: 'Contact',
-    href: '/pages/blog',
+    href: '/blog',
   },
 ];

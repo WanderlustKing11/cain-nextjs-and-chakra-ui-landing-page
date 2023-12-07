@@ -13,7 +13,7 @@ export default function Services() {
       <VStack>
         <Container m={20}>
           <Heading>
-            About Page
+            Services Page
           </Heading>
         </Container>
         <Container m={20}>
