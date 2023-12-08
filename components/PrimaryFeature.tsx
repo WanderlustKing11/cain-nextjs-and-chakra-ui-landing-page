@@ -27,7 +27,7 @@ export default function PrimaryFeature() {
             textAlign={'center'} 
             fontSize={'1.3rem'}
           >
-            Read our comprehensive guide so that you don't have to stress anymore.
+            Read our comprehensive guide so that you don&apos;t have to stress anymore.
           </Text>
         </Container>
         <Container centerContent>

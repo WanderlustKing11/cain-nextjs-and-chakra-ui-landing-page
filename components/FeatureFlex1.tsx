@@ -27,7 +27,7 @@ export default function FeatureFlex1() {
           flex='1'
           minH={{ base: '400px', md: '400px' }}
           m={{ base: '1', md: '5' }}
-          mt={{ md: '250px' }}
+          mt={{ base: '75px' , md: '250px' }}
         >
           <ServiceTitle />
         </Box>
