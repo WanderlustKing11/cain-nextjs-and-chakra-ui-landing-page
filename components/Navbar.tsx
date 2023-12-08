@@ -81,6 +81,11 @@ export default function Navbar() {
           ml={{ base: -2 }}
           display={{ base: 'flex', md: 'none' }}
         >
+          
+          {/* Consider using Chakra-UI's Spacer 
+          with Flex to align navbar buttons and 
+          icons to apply gaps to both sides. */}
+
           <IconButton
             onClick={onToggle}
             icon={

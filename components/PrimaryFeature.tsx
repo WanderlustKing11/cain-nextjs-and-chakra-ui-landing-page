@@ -3,15 +3,20 @@
 import {
   VStack,
   Container,
-  useColorModeValue,
+  Box,
+  BoxProps,
   Button,
   Heading,
   Text,
 } from '@chakra-ui/react';
 
+interface PrimaryFeatureProps extends BoxProps {
+  // Your existing props here, if any
+}
+
 export default function PrimaryFeature() {
   return(
-    <VStack mt={20} mb={20}>
+    <VStack spacing={4} align='stretch' mt='15%'>
         <Container centerContent>
           <Heading textAlign='center'>
             Received a violation notice?
