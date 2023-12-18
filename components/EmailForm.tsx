@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import {
   Box,
+  Container,
   Flex,
-  useColorModeValue,
   Button,
   FormControl,
   FormLabel,
@@ -11,7 +11,6 @@ import {
   Input,
   Heading,
   Text,
-  useBreakpointValue,
 } from '@chakra-ui/react';
 
 export default function EmailForm() {
@@ -28,8 +27,9 @@ export default function EmailForm() {
   };
 
   return (
-    <Box bg={'red.700'} p={{ base: '10%' }}>
-      <Flex flexDirection={'column'}>
+    <Box bg={'red.700'}>
+    <Container p={{ base: '10%' }}>
+      <Flex flexDirection={'column'} p={5}>
         <Heading color={'gray.100'}>Need Help?</Heading>
         <FormControl isInvalid={isError}>
           <FormLabel color={'gray.100'}>
@@ -62,6 +62,7 @@ export default function EmailForm() {
           Submit
         </Button>
       </Flex>
+    </Container>
     </Box>
   );
 }
