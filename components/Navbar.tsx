@@ -34,7 +34,7 @@ import { FaPhone } from 'react-icons/fa6';
 const Logo = (props: any) => {
   return (
     <Image
-      src='/logo3.png'
+      src='/logo1.png'
       width={'2rem'}
       height={'3rem'}
       ml={{ lg: '2rem' }}

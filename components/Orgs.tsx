@@ -14,7 +14,6 @@ import { AiFillInstagram } from 'react-icons/ai';
 export default function Orgs() {
   return (
     <Box
-      // bgGradient={'linear(to-b, #fff 0%, #000 25%)'}
       w='100%'
       h='auto'
       //   display='flex'
