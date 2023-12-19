@@ -44,30 +44,102 @@ export default function Footer() {
           mb={{ base: 10, sm: 16 }}
           mx={'15%'}
         >
-          <Link href='/'>Home</Link>
-          <Link href='/about'>About</Link>
-          <Link href='/service'>Service</Link>
-          <Link href='/contact'>Contact</Link>
-          <Link href='/privacy'>Privacy</Link>
-          <Link href='/terms'>Terms</Link>
+          <Link href='/'>
+            <Text
+              _hover={{
+                color: 'gray.200',
+                transition: 'color 0.3s ease-in-out',
+              }}
+              _active={{
+                color: 'gray.900',
+              }}
+            >
+              home
+            </Text>
+          </Link>
+          <Link href='/about'>
+            <Text
+              _hover={{
+                color: 'gray.200',
+                transition: 'color 0.3s ease-in-out',
+              }}
+              _active={{
+                color: 'gray.900',
+              }}
+            >
+              about
+            </Text>
+          </Link>
+          <Link href='/service'>
+            <Text
+              _hover={{
+                color: 'gray.200',
+                transition: 'color 0.3s ease-in-out',
+              }}
+              _active={{
+                color: 'gray.900',
+              }}
+            >
+              service
+            </Text>
+          </Link>
+          <Link href='/contact'>
+            <Text
+              _hover={{
+                color: 'gray.200',
+                transition: 'color 0.3s ease-in-out',
+              }}
+              _active={{
+                color: 'gray.900',
+              }}
+            >
+              contact
+            </Text>
+          </Link>
+          <Link href='/privacy'>
+            <Text
+              _hover={{
+                color: 'gray.200',
+                transition: 'color 0.3s ease-in-out',
+              }}
+              _active={{
+                color: 'gray.900',
+              }}
+            >
+              privacy
+            </Text>
+          </Link>
+          <Link href='/terms'>
+            <Text
+              _hover={{
+                color: 'gray.200',
+                transition: 'color 0.3s ease-in-out',
+              }}
+              _active={{
+                color: 'gray.900',
+              }}
+            >
+              terms
+            </Text>
+          </Link>
         </SimpleGrid>
       </Flex>
       <Divider m={'auto'} w='85%' />
       <Box mt='10'>
-        <Flex 
-          flexDir={{ base: 'column', md: 'row' }} 
+        <Flex
+          flexDir={{ base: 'column', md: 'row' }}
           justifyContent='space-between'
           py={{ base: '10%', md: '4%' }}
           px={{ base: '10%', md: '10%' }}
         >
           <VStack spacing={5}>
             <SimpleGrid columns={{ base: 1, md: 2 }}>
-            <Text>150 Mountain Ave, Unit C,</Text>
-            <Text>Hackettstown, NJ 07840</Text>
+              <Text>150 Mountain Ave, Unit C,</Text>
+              <Text>Hackettstown, NJ 07840</Text>
             </SimpleGrid>
             <SimpleGrid columns={{ base: 1, md: 2 }}>
-            <Text>Phone: (973) 227-2277 </Text>
-            <Text>| NJ DFS #: P00160</Text>
+              <Text>Phone: (973) 227-2277 </Text>
+              <Text>| NJ DFS #: P00160</Text>
             </SimpleGrid>
             <Text>
               Email:{' '}
@@ -76,12 +148,13 @@ export default function Footer() {
               </a>
             </Text>
           </VStack>
-          <Container 
-            display='flex' 
-            justifyContent={{ base: 'space-around', md: 'flex-end' }} 
+          <Container
+            display='flex'
+            justifyContent={{ base: 'space-around', md: 'flex-end' }}
             alignContent='center'
             mt={{ base: 10 }}
-            mb={{ base: 0 }}            
+            mb={{ base: 0 }}
+            px={{ base: '20%', sm: '30%', md: 0 }}
           >
             <Link href='https://www.facebook.com/cainandsonsfire/?fref=ts'>
               <Button
@@ -93,7 +166,7 @@ export default function Footer() {
                   bgColor: 'gray.300',
                 }}
                 _active={{
-                  color: 'gray.600',
+                  bgColor: 'gray.900',
                   transition: 'none',
                 }}
               >
@@ -105,7 +178,7 @@ export default function Footer() {
                 />
               </Button>
             </Link>
-            <Box ml={{ md: '20px', lg: '10%'}}></Box>
+            <Box ml={{ md: '20px', lg: '10%' }}></Box>
             <Link href='https://www.instagram.com/cainandsonsfireequipment/'>
               <Button
                 w='2.9rem'
@@ -116,7 +189,7 @@ export default function Footer() {
                   bgColor: 'gray.300',
                 }}
                 _active={{
-                  color: 'blackAlpha.900',
+                  bgColor: 'gray.900',
                   transition: 'none',
                 }}
               >
@@ -132,7 +205,9 @@ export default function Footer() {
         </Flex>
       </Box>
       <Container>
-        <Text p={{ base: 5 }}>© 2023 Cain & Sons Fire Equipment, Inc. All rights reserved.</Text>
+        <Text p={{ base: 5 }}>
+          © 2023 Cain & Sons Fire Equipment, Inc. All rights reserved.
+        </Text>
       </Container>
     </Box>
   );
