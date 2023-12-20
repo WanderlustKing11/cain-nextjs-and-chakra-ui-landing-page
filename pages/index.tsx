@@ -7,7 +7,7 @@ import ClientExamples from '@/components/ClientExamples';
 import FeatureFlex2 from '@/components/FeatureFlex2';
 import Location from '@/components/Location';
 import Orgs from '@/components/Orgs';
-import Footer from '@/components/Footer';
+// import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin']})
 
@@ -22,7 +22,7 @@ export default function Home() {
       <FeatureFlex2 />
       <Location />
       <Orgs />
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

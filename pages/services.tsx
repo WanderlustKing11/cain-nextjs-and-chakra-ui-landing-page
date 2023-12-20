@@ -1,8 +1,6 @@
-import {
-    
+import {    
     VStack,
-    Container,
-    
+    Container,    
     Heading,
     Text,
   } from '@chakra-ui/react';
