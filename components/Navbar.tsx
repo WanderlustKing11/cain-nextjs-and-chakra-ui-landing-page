@@ -33,13 +33,22 @@ import { FaPhone } from 'react-icons/fa6';
 
 const Logo = (props: any) => {
   return (
-    <Image
-      src='/logo1.png'
-      width={'2rem'}
-      height={'3rem'}
-      ml={{ lg: '2rem' }}
-      alt='Cain & Sons company logo fire extinguisher'
-    />
+    <Flex flexDir={'row'} alignItems='center'>
+      <Image
+        src='/logo1.png'
+        width='2rem'
+        height='3rem'
+        ml={{ lg: '2rem' }}
+        alt='Cain & Sons company logo fire extinguisher'
+        display='flex'
+      />
+      <Image
+        src='/logo3.png'
+        alt='Company title'
+        w='4rem'
+        h='2rem'        
+      />
+    </Flex>
   );
 };
 
@@ -81,11 +90,6 @@ export default function Navbar() {
           ml={{ base: -2 }}
           display={{ base: 'flex', md: 'none' }}
         >
-          
-          {/* Consider using Chakra-UI's Spacer 
-          with Flex to align navbar buttons and 
-          icons to apply gaps to both sides. */}
-
           <IconButton
             onClick={onToggle}
             icon={

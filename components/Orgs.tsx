@@ -25,7 +25,7 @@ export default function Orgs() {
         justifyContent='center'
         alignContent='center'
         flexDir='column'
-        my='10%'
+        my={{ base: '10%', md: '5%' }}
       >
         <Link href='https://mountolivechambernj.com/'>
           <Image

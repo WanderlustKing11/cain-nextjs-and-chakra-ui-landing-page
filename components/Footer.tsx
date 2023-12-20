@@ -17,7 +17,7 @@ import { AiFillInstagram } from 'react-icons/ai';
 export default function Footer() {
   return (
     <Box bgGradient={'linear(to-b, #fff 0%, #000 25%)'} color={'gray.500'}>
-      <Box m={12}>
+      <Box m={12} pt={'200px'}>
         <Image
           src='/logo2.png'
           alt='Cain & Sons company logo'
@@ -29,7 +29,8 @@ export default function Footer() {
         />
         <Text
           my={{ base: 10, sm: 0 }}
-          px={{ base: '6%', sm: '10%', md: '10%' }}
+          px={{ base: 'auto', sm: '10%', md: '10%' }}
+          ml={{ base: '20px', sm: 0 }}
           fontSize={{ base: '1.4rem', sm: '1.65rem', md: '1.8rem' }}
         >
           Offering the best fire extinguisher servicing.
@@ -42,7 +43,7 @@ export default function Footer() {
           fontSize={{ base: '1.4rem', md: '1rem' }}
           color={'gray.600'}
           mb={{ base: 10, sm: 16 }}
-          mx={'15%'}
+          mx={{ base: 'auto', sm: '15%'}}
         >
           <Link href='/'>
             <Text

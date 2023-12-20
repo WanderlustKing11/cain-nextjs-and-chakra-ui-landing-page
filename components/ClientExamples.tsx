@@ -43,8 +43,8 @@ export default function ClientExamples() {
 
       <Flex 
         mt={10}
-        p={{ base: 4, md: 0 }}
-        fontSize={{ base: 27, md: '1.6rem' }}
+        py={{ base: 2, md: 0 }}
+        fontSize={{ base: '1.3rem', md: '1.6rem' }}
         justifyContent='center'
         // w={{  md: '130%' }}
       >
