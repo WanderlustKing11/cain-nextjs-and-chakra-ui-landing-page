@@ -71,7 +71,7 @@ export default function Footer() {
               about
             </Text>
           </Link>
-          <Link href='/service'>
+          <Link href='/services'>
             <Text
               _hover={{
                 color: 'gray.200',
@@ -81,7 +81,7 @@ export default function Footer() {
                 color: 'gray.900',
               }}
             >
-              service
+              services
             </Text>
           </Link>
           <Link href='/contact'>

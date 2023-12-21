@@ -45,8 +45,9 @@ const Logo = (props: any) => {
       <Image
         src='/logo3.png'
         alt='Company title'
-        w='4rem'
-        h='2rem'        
+        w='3.5rem'
+        h='2.5rem'  
+        ml='10px'      
       />
     </Flex>
   );
