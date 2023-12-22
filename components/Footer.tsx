@@ -24,7 +24,7 @@ export default function Footer() {
           w={{ base: '90%', sm: '60%' }}
           maxW='400px'
           h={'auto'}
-          pt={{ base: '55%', sm: '35%', md: '18%' }}
+          pt={{ base: '100px', sm: '80px', md: '20px' }}
           mx={{ base: 'auto', md: 0 }}
         />
         <Text
@@ -43,7 +43,7 @@ export default function Footer() {
           fontSize={{ base: '1.4rem', md: '1rem' }}
           color={'gray.600'}
           mb={{ base: 10, sm: 16 }}
-          mx={{ base: 'auto', sm: '15%'}}
+          mx={{ base: 'auto', sm: '15%' }}
         >
           <Link href='/'>
             <Text

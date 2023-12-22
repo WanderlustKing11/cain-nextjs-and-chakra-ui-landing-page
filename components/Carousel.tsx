@@ -48,32 +48,33 @@ export default function Carousel() {
       position: { base: 'top left', sm: '10% -20%', md: '10% -50%', lg: '50% 10%' },
       size: { base: '300%', sm: '200%', md: '150%', lg: '70%' },
       textColor: 'gray.200',
-      textTransfrom: { base: 'translate(0, -60%)', sm: 'translate(0, -50%)', md: 'translate(30%, -10%)', lg: 'translate(16%, -45%)' },
+      textTransform: { base: 'translate(0, -60%)', sm: 'translate(0, -50%)', md: 'translate(30%, -10%)', lg: 'translate(16%, -45%)' },
       transparentBg: 'hsla(100,0%,0%,0.3)',
       borderRadius: '15px',
     },
     {
       title: 'Small business helping other small businesses',
-      text: "We believe that integrety and quality don't have to be exclusive.",
+      text: 'We believe that integrety and quality don&apos;t have to be exclusive.',
+      image: '/ps-02.jpg',
+      position: { base: '60% 0%', sm: '60% 0%', md: '60% 0%', lg: '50% 10%' },
+      size: { base: '250%', sm: '190%', md: '115%', lg: '70%' },
+      textColor: 'gray.600',
+      textTransform: { base: 'translate(0%, -40%)', sm: 'translate(0%, -40%)' , md: 'translate(-28%, -120%)', lg: 'translate(-20%, -70%)' },
+      transparentBg: 'hsla(200,94%,67%,0.3)',
+      borderRadius: '15px',
+    },
+    {
+      title: 'Slide #3',
+      text: 'This project slide still needs content. More to come soon!',
       image: '/ps-07.jpg',
       position: { base: '23% 0%', sm: '20% 0%', md: 'top left', lg: '50% 10%' },
       size: { base: '260%', sm: '185%', md: '115%', lg: '70%' },
       textColor: 'gray.200',
-      textTransfrom: { base: 'translate(20%, -60%)', sm: 'translate(30%, -50%)', md: 'translate(45%, -52%)', lg: 'translate(35%, -45%)' },
+      textTransform: { base: 'translate(20%, -60%)', sm: 'translate(30%, -50%)', md: 'translate(45%, -52%)', lg: 'translate(35%, -45%)' },
       transparentBg: { base: 'hsla(100,0%,0%,0.3)', md: 'transparent' },
       borderRadius: {base: '15px', md: 'none' },
 
-    },
-    {
-      title: 'Design Projects 3',
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-      image: '/ps-02.jpg',
-      position: { base: '60% 0%', sm: '60% 0%', md: '60% 0%', lg: '50% 10%' },
-      size: { base: '250%', sm: '190%', md: '115%', lg: '70%' },
-      textTransfrom: { base: 'translate(0%, -40%)', sm: 'translate(0%, -40%)' , md: 'translate(-28%, -120%)', lg: 'translate(-20%, -70%)' },
-      transparentBg: 'hsla(200,94%,67%,0.3)',
-      borderRadius: '15px',
-    },
+    },    
   ]
 
   return (
@@ -139,7 +140,7 @@ export default function Carousel() {
                 maxW={'lg'}
                 position="absolute"
                 top="50%"
-                transform={card.textTransfrom}
+                transform={card.textTransform}
                 backgroundColor={card.transparentBg}
                 borderRadius={card.borderRadius}
               >

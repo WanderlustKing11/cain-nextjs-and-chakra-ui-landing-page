@@ -13,6 +13,7 @@ import {
 import { FiPhone } from "react-icons/fi";
 import { MdOutlineAlternateEmail } from 'react-icons/md';
 import { IoLocationOutline } from "react-icons/io5";
+import { BiBluetooth } from 'react-icons/bi';
 
 
 export default function Contact() {
@@ -75,7 +76,7 @@ export default function Contact() {
         bgRepeat={'no-repeat'}
         zIndex={-10}
       >
-        <Box bgColor={'gray.800'} opacity={0.9} zIndex={-5}>
+        <Box bgColor={'gray.800'} opacity={0.8} zIndex={-5}>
           <VStack zIndex={10}>
             <Container m={20} h={'200px'}>
               <Heading as='h1' fontSize='6xl' color={'gray.100'}>
@@ -122,7 +123,17 @@ export default function Contact() {
               <HStack key={contItem.id}>                
                 <Icon as={contItem.icon} color={contItem.iconColor} boxSize={contItem.iconSize} />
                 <Link href={contItem.href ?? '#'}>
-                  <Text m={contItem.textM} ml={contItem.textML}>{contItem.text}</Text>
+                  <Text 
+                    m={contItem.textM} 
+                    ml={contItem.textML}
+                    _hover={{
+                      color: 'blue.500',
+                      transition: 'color 0.3s ease-in-out'
+                    }}
+                    transition={'color 0.3s ease-in-out'}
+                  >
+                    {contItem.text}
+                  </Text>
                 </Link>
               </HStack>
               ))}
